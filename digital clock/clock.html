@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="/clock.css">
+</head>
+<body>
+    <div class="clock-container">
+        <div class="digital-clock">
+            <div id="hours" class="time"></div>
+            <div class="separator">:</div>
+            <div id="minutes" class="time"></div>
+            <div class="separator">:</div>
+            <div id="seconds" class="time"></div>
+            <div id="ampm" class="time ampm"></div>
+        </div>
+        <div class="clock-settings">
+            <label for="format">Select Time Format: </label>
+            <select id="format" onchange="updateClock()">
+                <option value="12">12-hour</option>
+                <option value="24">24-hour</option>
+            </select>
+        </div>
+    </div>
+    <script src="/clock.js"></script>
+</body>
+</html>
