@@ -1,0 +1,354 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #8b8888;
+    padding-top: 60px;
+}
+
+header {
+    background: #070707;
+    color: #000000;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section Styles */
+section {
+    padding: 100px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+#intro {
+    background-color: #000000; /* Dark background */
+    color: #ffffff; /* Light text for contrast */
+    padding: 100px 20px; /* Padding to ensure space from the edges */
+    text-align: left; /* Left-align the text */
+}
+
+#intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px; /* Restrict the width for better readability */
+    margin-left: 0; /* Ensure the paragraph starts from the left */
+}
+
+.container {
+    max-width: 1200px; /* Ensures the content is centered in a container */
+    margin: 0 auto; /* Centers the container horizontally */
+    padding-left: 20px; /* Adds left padding for the content */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #intro {
+        padding: 70px 20px;
+    }
+
+    #intro h1 {
+        font-size: 2rem;
+    }
+
+    #intro p {
+        font-size: 1rem;
+    }
+}
+
+
+
+.project {
+    background-color: #fffcfc;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(199, 195, 195, 0.1);
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Centering the content */
+}
+
+.project-image img {
+    width: 100%; /* Adjusts image to the width of the project div */
+    height: auto; /* Keeps the aspect ratio */
+    max-height: 300px; /* Ensures the image doesn’t get too tall */
+    object-fit: cover; /* Keeps the image's aspect ratio while fitting */
+    border-radius: 10px;
+}
+
+
+.project:hover {
+    box-shadow: 0 8px 16px rgba(110, 109, 109, 0.2);
+    transform: translateY(-5px); /* Hover effect */
+}
+
+/* Make sure images are responsive */
+@media (max-width: 768px) {
+    .project {
+        width: 100%; /* Full width for small screens */
+    }
+}
+
+.skill-animation {
+    animation: scaleUp 1s ease-in-out infinite alternate; /* Optional animated effect */
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+/* Projects Section */
+#projects {
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 100px 20px;
+}
+
+#projects h2 {
+    color: #f7eeee; /* Darker text color for contrast */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #projects .project {
+        width: 100%;
+    }
+
+    section {
+        padding: 70px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+}
+#skills {
+    background-color: #020202; /* Dark background */
+    color: #fff;
+    padding: 100px 20px;
+}
+
+#skills h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+/* Skill Container */
+.skill {
+    margin-bottom: 30px;
+}
+
+.skill h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Skill Bar */
+.skill-bar {
+    background-color: #4e4e4e; /* Dark background for the skill bar */
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%; /* Full width of the container */
+    margin-bottom: 10px;
+}
+
+.skill-level {
+    height: 100%;
+    width: 0; /* Start the animation with a width of 0 */
+    background-color: #93c041; /* Color of the skill bar */
+    border-radius: 5px;
+    transition: width 2s ease-in-out; /* Smooth animation */
+}
+
+/* Skill Levels (adjust percentages based on skill proficiency) */
+.html-css {
+    width: 90%; /* Skill proficiency percentage */
+}
+
+.javascript {
+    width: 85%;
+}
+
+.react {
+    width: 75%;
+}
+
+.nodejs {
+    width: 70%;
+}
+
+/* Animation for when the page loads */
+.skill-bar:hover .skill-level {
+    animation: growSkill 2s forwards ease-in-out;
+}
+
+@keyframes growSkill {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: inherit; /* Grows the skill bar to its full width */
+    }
+}
+#contact {
+    background-color: #252424;
+    color: #fff;
+    padding: 100px 20px;
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly lower */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}
+
+/* Contact Section Animation */
+#contact.show {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move up */
+}
+
+/* Contact Info */
+.contact-info {
+    margin-bottom: 30px;
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly lower */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #93c041; /* Highlight links */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: #1f1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly lower */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin: 10px 0 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #93c041;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #82b438;
+}
+
+/* Animation Trigger for Contact Info and Form */
+#contact.show .contact-info,
+#contact.show .contact-form {
+    animation: fadeInUp 1s ease forwards;
+}
+
+#contact.show .contact-form {
+    animation-delay: 0.5s; /* Delay for form to animate after info */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
